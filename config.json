@@ -1,0 +1,13 @@
+{
+  "contentPathPrefix": "/unb-tutorials",
+  "collections": [
+    {
+      "id": "unbdev-board",
+      "title": "UNBDev Board Guide"
+    },
+    {
+      "id": "engg1102",
+      "title": "ENGG 1102"
+    }
+  ]
+}
