@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="640" height="360" viewBox="0 0 640 360" role="img" aria-labelledby="title desc">
+<title id="title">ENGG 1102 getting started</title><desc id="desc">A microbit display with a heart and two buttons, beside the words Write, Run, Check.</desc>
+<rect width="640" height="360" rx="20" fill="#eaf1f7"/>
+<rect x="45" y="80" width="270" height="200" rx="24" fill="#16344b"/>
+<circle cx="78" cy="170" r="18" fill="#fff"/><circle cx="282" cy="170" r="18" fill="#fff"/>
+<text x="78" y="177" font-family="sans-serif" font-size="20" text-anchor="middle">A</text><text x="282" y="177" font-family="sans-serif" font-size="20" text-anchor="middle">B</text>
+<path d="M180 230 L125 175 C85 135 150 100 180 140 C210 100 275 135 235 175 Z" fill="#ef4160"/>
+<text x="345" y="125" font-family="sans-serif" font-size="32" fill="#16344b">ENGG 1102</text><text x="345" y="175" font-family="sans-serif" font-size="26" fill="#16344b">Write</text><text x="345" y="215" font-family="sans-serif" font-size="26" fill="#16344b">Run</text><text x="345" y="255" font-family="sans-serif" font-size="26" fill="#16344b">Check</text>
+</svg>

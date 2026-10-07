@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="640" height="360" viewBox="0 0 640 360" role="img" aria-labelledby="title desc">
+  <title id="title">BLiXel light patterns</title>
+  <desc id="desc">Five numbered colour lights and an arrow showing a pattern moving between them.</desc>
+  <rect width="640" height="360" rx="24" fill="#271336"/>
+  <path d="M92 160H530" stroke="#b57ccc" stroke-width="3"/>
+  <path d="m520 151 12 9-12 9" fill="none" stroke="#b57ccc" stroke-width="3"/>
+  <g stroke="#694678" stroke-width="5">
+    <circle cx="96" cy="216" r="34" fill="#ff667a"/>
+    <circle cx="208" cy="216" r="34" fill="#80dfaa"/>
+    <circle cx="320" cy="216" r="34" fill="#8fbdff"/>
+    <circle cx="432" cy="216" r="34" fill="#ffd878"/>
+    <circle cx="544" cy="216" r="34" fill="#c29cff"/>
+  </g>
+  <g fill="#e6d3f0" font-family="sans-serif" font-size="20" text-anchor="middle">
+    <text x="96" y="278">1</text><text x="208" y="278">2</text>
+    <text x="320" y="278">3</text><text x="432" y="278">4</text><text x="544" y="278">5</text>
+  </g>
+</svg>
