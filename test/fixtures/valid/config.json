@@ -1,0 +1,9 @@
+{
+  "contentPathPrefix": "/unb-tutorials",
+  "collections": [
+    {
+      "id": "demo",
+      "title": "Demo"
+    }
+  ]
+}
