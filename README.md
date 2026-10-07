@@ -124,5 +124,6 @@ published, and when.
 ## Status
 
 Bootstrapped. The layout, the content contract and the validator are in place.
-Both collections are empty and are populated as lessons are migrated, so the
-editor currently shows neither.
+Both collections contain an instructor-preview lesson. The independent route and
+editor integration remain tracked in UNB-ECE/unb-platform #185/#186; until those
+land, these catalogs are not the deployed home-page source.
