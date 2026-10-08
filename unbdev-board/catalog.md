@@ -7,7 +7,7 @@ Instructor previews of activities using the integrated board. Physical validatio
 ```codecard
 [
   {
-    "name": "BLiXel light patterns (preview) [AC5 refresh check]",
+    "name": "BLiXel light patterns (preview)",
     "description": "Instructor preview — hardware testing pending. Learn all five integrated lights: colour, brightness, shift, rotate, and bar graphs.",
     "url": "/unb-tutorials/unbdev-board/projects/blixel",
     "cardType": "tutorial",
