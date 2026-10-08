@@ -13,3 +13,12 @@ The BLiXel card remains **Hardware test pending** with an orange ribbon. This mi
 The copied lesson is an instructor test procedure, not a corrected or physically validated student lesson. Consult the linked issues before testing. No lesson instructions or dependency pins were silently changed during migration.
 
 Use the UNB IDE Tutorial Tool for Markdown preview; simulator/compiler evidence is separate from physical validation. Course-specific explanations and assessment belong in the course collection.
+
+## Microphone instructor preview
+
+[Explore the microphone](projects/microphone.md) covers all seven public microphone
+blocks at extension commit `c870228e696624519cee1c312c65b229270dfa95`.
+[Coverage and validation](microphone-validation.md) separates software evidence from
+external board observations. The card remains **Hardware unverified**.
+Authoring/publication is governed by [unb-platform #141](https://github.com/UNB-ECE/unb-platform/issues/141);
+no lesson is bundled into pxt-microbit.
