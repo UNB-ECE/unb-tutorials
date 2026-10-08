@@ -131,7 +131,11 @@ published, and when.
 
 ## Status
 
-Bootstrapped. The layout, the content contract and the validator are in place.
-Both collections contain an instructor-preview lesson. The independent route has
-landed; the editor integration is tracked in UNB-ECE/unb-platform #186, and until
-that release ships these catalogs are not yet the deployed home-page source.
+Live. The layout, the content contract and the validator are in place, and both
+collections are served on the deployed UNB IDE home page. The editor integration
+landed in UNB-ECE/unb-platform #186, so a lesson or card published here reaches
+students without an editor release.
+
+Both collections currently hold an instructor-preview lesson. Their hardware
+behaviour has not been physically tested, and the cards stay labelled until it
+has been.
