@@ -2,6 +2,8 @@
 
 Introductory editor practice. Course-specific learning objectives and assessment require instructor review.
 
+## Activities
+
 ```codecard
 [
   {
