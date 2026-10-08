@@ -2,6 +2,8 @@
 
 Instructor previews of activities using the integrated board. Physical validation is not complete.
 
+## Activities
+
 ```codecard
 [
   {

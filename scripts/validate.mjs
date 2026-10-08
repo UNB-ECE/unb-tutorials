@@ -3,8 +3,9 @@
 //
 // The contract for a collection is:
 //
-//   <collection>/catalog.md          PXT gallery markdown: a "# Title" heading
-//                                    and one ```codecard fenced JSON array
+//   <collection>/catalog.md          PXT gallery markdown: a "# Title" heading,
+//                                    at least one "## Category" heading, and one
+//                                    ```codecard fenced JSON array
 //   <collection>/projects/<name>.md  one lesson per card
 //   <collection>/static/<asset>      card and lesson images
 //
@@ -39,6 +40,10 @@ export const CARD_TYPES = new Set([
 const REQUIRED_CARD_FIELDS = ["name", "url", "cardType"];
 const CODECARD_BLOCK = /```codecard[^\n]*\n([\s\S]*?)\n[ \t]*```/;
 const HEADING = /^#\s+\S/m;
+// The editor's gallery parser only collects a ```codecard block once it has seen
+// a "## Category" heading, so a catalog without one parses to no cards at all.
+// A "# Title" is not a substitute: the level matters.
+const CATEGORY_HEADING = /^##\s+\S/m;
 const COLLECTION_ID = /^[a-z0-9][a-z0-9-]*$/;
 
 /**
@@ -120,6 +125,12 @@ function validateCatalog(path, label, collectionDir, base, problems) {
 
     if (!HEADING.test(text)) {
         problems.push(`${label}: needs a "# Title" heading; it becomes the home-page row title`);
+    }
+
+    if (!CATEGORY_HEADING.test(text)) {
+        problems.push(
+            `${label}: needs a "## Category" heading; the editor collects cards only under one, so without it the collection renders no cards`
+        );
     }
 
     const block = text.match(CODECARD_BLOCK);

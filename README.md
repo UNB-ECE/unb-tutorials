@@ -50,12 +50,14 @@ Pin a commit. A branch name such as `main` is not a reviewed revision.
 
 ## Adding, reordering or removing a card
 
-Cards live in `<collection>/catalog.md`: a `# Title` heading followed by one
-`codecard` block holding a JSON array. The order of the array is the order on
-the home page.
+Cards live in `<collection>/catalog.md`: a `# Title` heading, a `## Category`
+heading, then one `codecard` block holding a JSON array. The order of the array
+is the order on the home page.
 
 ````markdown
 # UNBDev Board Guide
+
+## Activities
 
 ```codecard
 [
@@ -72,6 +74,11 @@ the home page.
 ```
 ````
 
+- The `## Category` heading is required, and its text is the name the editor
+  groups the cards under. The editor collects a `codecard` block only once it
+  has seen one, so a catalog with no `## ` heading renders as an empty row.
+  The level matters: a `# Title` is not a substitute. Use one category per
+  catalog; the home-page row is named by `targetconfig.json`, not by this text.
 - `name`, `url` and `cardType` are required; everything else is optional.
 - `url` is the path the editor requests, so it begins with
   `<prefix>/<collection>/` from `config.json` and must resolve to
@@ -92,10 +99,11 @@ node scripts/validate.mjs     # the collections in this repository
 node scripts/selftest.mjs     # the validator itself, against its fixtures
 ```
 
-Both run on every pull request. They check that each catalog parses, that every
-card carries the required fields and a supported type, that every `url` and
-`imageUrl` resolves to a file in the same collection, and that every lesson has
-a title. No dependencies and no install step: the scripts are plain Node.
+Both run on every pull request. They check that each catalog parses and carries
+both headings, that every card carries the required fields and a supported type,
+that every `url` and `imageUrl` resolves to a file in the same collection, and
+that every lesson has a title. No dependencies and no install step: the scripts
+are plain Node.
 
 ## Review and publication
 
@@ -124,6 +132,6 @@ published, and when.
 ## Status
 
 Bootstrapped. The layout, the content contract and the validator are in place.
-Both collections contain an instructor-preview lesson. The independent route and
-editor integration remain tracked in UNB-ECE/unb-platform #185/#186; until those
-land, these catalogs are not the deployed home-page source.
+Both collections contain an instructor-preview lesson. The independent route has
+landed; the editor integration is tracked in UNB-ECE/unb-platform #186, and until
+that release ships these catalogs are not yet the deployed home-page source.

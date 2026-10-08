@@ -1,5 +1,7 @@
 # Demo
 
+## Activities
+
 ```codecard
 [
   {
