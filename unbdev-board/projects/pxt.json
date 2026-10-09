@@ -1,0 +1,16 @@
+{
+    "name": "unbdev-board-projects",
+    "description": "UNBdev.board tutorial authoring project",
+    "supportedTargets": [
+        "microbit"
+    ],
+    "dependencies": {
+        "unbdev-board": "github:UNB-ECE/pxt-unbdev-board#9c599beeb48972ae5d9f8108f9af66b320add00b"
+    },
+    "files": [
+        "main.ts",
+        "README.md",
+        "blixel.md",
+        "microphone.md"
+    ]
+}
