@@ -1,16 +1,34 @@
 {
     "name": "unbdev-board-projects",
     "description": "UNBdev.board tutorial authoring project",
-    "supportedTargets": [
-        "microbit"
-    ],
     "dependencies": {
-        "unbdev-board": "github:UNB-ECE/pxt-unbdev-board#9c599beeb48972ae5d9f8108f9af66b320add00b"
+        "unbdev-board": "github:UNB-ECE/pxt-unbdev-board#9c599beeb48972ae5d9f8108f9af66b320add00b",
+        "microphone": "*"
     },
     "files": [
         "main.ts",
         "README.md",
         "blixel.md",
-        "microphone.md"
-    ]
+        "microphone.md",
+        "main.py"
+    ],
+    "targetVersions": {
+        "target": "9.1.1",
+        "targetId": "microbit"
+    },
+    "supportedTargets": [
+        "microbit"
+    ],
+    "preferredEditor": "tsprj",
+    "yotta": {
+        "config": {
+            "microbit-dal": {
+                "bluetooth": {
+                    "open": 0,
+                    "whitelist": 1,
+                    "security_level": "SECURITY_MODE_ENCRYPTION_NO_MITM"
+                }
+            }
+        }
+    }
 }

@@ -211,7 +211,7 @@ input.onButtonPressed(Button.AB, function () {
 
 ## Download and check @showdialog
 
-Save your project, then download it to the integrated micro:bit using the editor’s Download instructions. After restart, the micro:bit shows 0 and the five BLiXels should be off. Press A (five blue), then B (all off). Press A+B once: at 1 expect red at pixel 1 and green at 2; at 2 expect red at 4 and green at 5; at 3 expect green at 1 and red at 5; at 4 expect three green lights; at 0 expect all off. Record each actual result, board/controller firmware revision, and a photo or video. Ask your instructor to confirm the physical pixel order rather than assuming the drawing’s orientation.
+Save your project, then download it to the integrated micro:bit using the editor's Download instructions. After restart, the micro:bit shows 0 and the five BLiXels should be off. Press A (five blue), then B (all off). Press A+B once: at 1 expect red at pixel 1 and green at 2; at 2 expect red at 4 and green at 5; at 3 expect green at 1 and red at 5; at 4 expect three green lights; at 0 expect all off. Record each actual result, board/controller firmware revision, and a photo or video. Ask your instructor to confirm the physical pixel order rather than assuming the drawing's orientation.
 
 ## Compare brightness and recover
 
