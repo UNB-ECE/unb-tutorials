@@ -204,7 +204,7 @@ input.onButtonPressed(Button.AB, function () {
     UNBdevBLiXel.showBarGraph(50, 100, 0)
     basic.showNumber(4)
     basic.pause(2000)
-    UNBdevBLiXel.clear()
+    UNBdevBLiXel.setAll(UNBdevBLiXel.colour(UNBdevBLiXelColour.Black))
     basic.showNumber(0)
 })
 ```
