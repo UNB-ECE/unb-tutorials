@@ -1,0 +1,26 @@
+{
+    "name": "unb-tutorials-engg1102-projects",
+    "dependencies": {
+        "core": "*",
+        "radio": "*",
+        "microphone": "*",
+        "unb-tutorials": "github:unb-ece/unb-tutorials"
+    },
+    "files": [
+        "getting-started.md",
+        "main.blocks",
+        "main.ts",
+        "README.md"
+    ],
+    "testFiles": [
+        "test.ts"
+    ],
+    "targetVersions": {
+        "target": "9.1.1",
+        "targetId": "microbit"
+    },
+    "supportedTargets": [
+        "microbit"
+    ],
+    "preferredEditor": "tsprj"
+}
