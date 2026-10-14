@@ -1,7 +1,7 @@
 # Microphone preview coverage and validation
 
 Governing [unb-platform #141](https://github.com/UNB-ECE/unb-platform/issues/141).
-Lesson: [Explore the microphone](projects/microphone.md).
+Lesson: [Explore the microphone](lessons/microphone.md).
 Extension: `c870228e696624519cee1c312c65b229270dfa95`; microphone source blob
 `9d792cdb41f8b95b4bdd456ba6e4336db9be440d`. These identify inspected APIs,
 not certified board/firmware compatibility. Content revision and actual editor/build/check

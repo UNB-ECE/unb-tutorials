@@ -1,5 +1,6 @@
 {
-    "name": "unb-tutorials-engg1102-projects",
+    "name": "engg1102",
+    "description": "UNB IDE ENGG 1102 course extension and lessons",
     "dependencies": {
         "core": "*",
         "radio": "*",
@@ -7,11 +8,12 @@
         "unb-tutorials": "github:unb-ece/unb-tutorials"
     },
     "files": [
-        "getting-started.md",
-        "main.blocks",
-        "main.ts",
         "README.md",
-        "micro-led.md"
+        "catalog.md",
+        "main.ts",
+        "lessons/getting-started.md",
+        "lessons/micro-led.md",
+        "lessons/main.blocks"
     ],
     "testFiles": [
         "test.ts"

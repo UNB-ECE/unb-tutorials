@@ -9,7 +9,7 @@ This repository can be added as an **extension** in MakeCode.
 * open [/](/)
 * click on **New Project**
 * click on **Extensions** under the gearwheel menu
-* search for **https://github.com/unb-ece/unb-tutorials/engg1102/projects** and import
+* search for **https://github.com/unb-ece/unb-tutorials/engg1102** and import
 
 ## Edit this project
 
@@ -17,7 +17,7 @@ To edit this repository in MakeCode.
 
 * open [/](/)
 * click on **Import** then click on **Import URL**
-* paste **https://github.com/unb-ece/unb-tutorials/engg1102/projects** and click import
+* paste **https://github.com/unb-ece/unb-tutorials/engg1102** and click import
 
 #### Metadata (used for search, rendering)
 

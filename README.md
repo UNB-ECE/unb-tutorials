@@ -15,8 +15,12 @@ Two collections, one folder each. Adding a lesson to one never touches the other
 
 ```text
 <collection>/
+  pxt.json              course extension manifest
+  main.ts               empty authoring program
+  test.ts               course extension test file
   catalog.md            the cards shown in that home-page row
-  projects/<name>.md    one lesson per card
+  README.md             course documentation
+  lessons/<name>.md     one lesson per card
   static/<asset>        card and lesson images
 config.json             the collections, and the path they are served from
 scripts/validate.mjs    the content contract, executable
@@ -28,7 +32,7 @@ contract; the sections below explain it in prose, and the script enforces it.
 
 ## Authoring a lesson
 
-Create `<collection>/projects/<name>.md`. It starts with a `# Title`, then one
+Create `<collection>/lessons/<name>.md`. It starts with a `# Title`, then one
 `## Heading` per step. Prose becomes instructions; a fenced `blocks` block
 becomes a block snippet. The step-by-step format is MakeCode's:
 
@@ -64,7 +68,7 @@ is the order on the home page.
   {
     "name": "BLiXel light patterns",
     "description": "Create a safe light pattern with the integrated board.",
-    "url": "/unb-tutorials/unbdev-board/projects/blixel",
+    "url": "/unb-tutorials/unbdev-board/lessons/blixel",
     "cardType": "tutorial",
     "imageUrl": "/unb-tutorials/unbdev-board/static/blixel.svg",
     "label": "Hardware test pending",
@@ -82,7 +86,7 @@ is the order on the home page.
 - `name`, `url` and `cardType` are required; everything else is optional.
 - `url` is the path the editor requests, so it begins with
   `<prefix>/<collection>/` from `config.json` and must resolve to
-  `projects/<name>.md`. Write it without the `.md`.
+  `lessons/<name>.md`. Write it without the `.md`.
 - `imageUrl` must resolve to a file under the same collection's `static/`.
 - `cardType` must be one the editor supports. `scripts/validate.mjs` lists the
   supported set; a card with any other type is rejected.

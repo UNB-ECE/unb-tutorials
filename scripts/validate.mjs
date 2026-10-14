@@ -6,7 +6,7 @@
 //   <collection>/catalog.md          PXT gallery markdown: a "# Title" heading,
 //                                    at least one "## Category" heading, and one
 //                                    ```codecard fenced JSON array
-//   <collection>/projects/<name>.md  one lesson per card
+//   <collection>/lessons/<name>.md   one lesson per card
 //   <collection>/static/<asset>      card and lesson images
 //
 // Card and image URLs are written as the absolute paths the editor requests, so
@@ -106,8 +106,8 @@ export function validateRepo(root) {
             problems
         );
         validateLessons(
-            join(collectionDir, "projects"),
-            `${collection.id}/projects`,
+            join(collectionDir, "lessons"),
+            `${collection.id}/lessons`,
             problems
         );
     }
@@ -202,15 +202,15 @@ function resolveInsideCollection(value, field, base, collectionDir, extension, a
     }
 }
 
-function validateLessons(projectsDir, label, problems) {
-    if (!existsSync(projectsDir)) {
+function validateLessons(lessonsDir, label, problems) {
+    if (!existsSync(lessonsDir)) {
         problems.push(`${label}/: folder is missing`);
         return;
     }
 
-    for (const name of readdirSync(projectsDir).sort()) {
+    for (const name of readdirSync(lessonsDir).sort()) {
         if (!name.endsWith(".md")) continue;
-        const text = readFileSync(join(projectsDir, name), "utf8");
+        const text = readFileSync(join(lessonsDir, name), "utf8");
         if (!HEADING.test(text)) {
             problems.push(`${label}/${name}: lesson needs a "# Title" heading`);
         }

@@ -1,16 +1,21 @@
 {
-    "name": "unbdev-board-projects",
-    "description": "UNBdev.board tutorial authoring project",
+    "name": "unbdev-board",
+    "description": "UNBdev.board tutorial authoring course extension",
     "dependencies": {
         "unbdev-board": "github:UNB-ECE/pxt-unbdev-board#9c599beeb48972ae5d9f8108f9af66b320add00b",
         "microphone": "*"
     },
     "files": [
-        "main.ts",
         "README.md",
-        "blixel.md",
-        "microphone.md",
-        "main.py"
+        "catalog.md",
+        "main.ts",
+        "microphone-validation.md",
+        "lessons/blixel.md",
+        "lessons/microphone.md",
+        "lessons/main.py"
+    ],
+    "testFiles": [
+        "test.ts"
     ],
     "targetVersions": {
         "target": "9.1.1",

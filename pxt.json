@@ -11,11 +11,14 @@
         "unbdev-board/catalog.md",
         "unbdev-board/README.md",
         "unbdev-board/microphone-validation.md",
-        "unbdev-board/projects/blixel.md",
-        "unbdev-board/projects/microphone.md",
+        "unbdev-board/main.ts",
+        "unbdev-board/lessons/blixel.md",
+        "unbdev-board/lessons/microphone.md",
         "engg1102/catalog.md",
         "engg1102/README.md",
-        "engg1102/projects/getting-started.md"
+        "engg1102/main.ts",
+        "engg1102/lessons/getting-started.md",
+        "engg1102/lessons/micro-led.md"
     ],
     "targetVersions": {
         "target": "9.1.1",

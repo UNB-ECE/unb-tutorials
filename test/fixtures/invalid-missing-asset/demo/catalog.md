@@ -7,7 +7,7 @@
   {
     "name": "Demo activity",
     "description": "A card that resolves.",
-    "url": "/unb-tutorials/demo/projects/lesson",
+    "url": "/unb-tutorials/demo/lessons/lesson",
     "cardType": "tutorial",
     "imageUrl": "/unb-tutorials/demo/static/missing.svg"
   }
