@@ -328,10 +328,10 @@ node scripts/validate.mjs
 
 ## 9. Propose Publication via Pull Request
 
-You can contribute from the **GitHub dashboard in the UNB IDE** after editing your fork. The dashboard shows the repository and branch for the open project. When there are no local changes to commit, use **Contribute** to propose your fork's changes to the upstream repository.
+You can open a pull request either from the **GitHub dashboard in the UNB IDE** or from the **GitHub website**. Both routes use GitHub's **Contribute** flow to propose changes from your fork to `UNB-ECE/unb-tutorials`.
 
-1. In the UNB IDE, open the GitHub dashboard for your project. Confirm the repository and branch shown near the top are the fork and branch you intend to submit.
-2. Click **Contribute**, then choose **Open pull request**. The IDE will take you through the pull request flow on GitHub. You can also open your fork on GitHub and use **Contribute** -> **Open pull request** there.
+1. **From the UNB IDE:** Open the GitHub dashboard for your project. Confirm the repository and branch shown near the top are the fork and branch you intend to submit, then click **Contribute** and choose **Open pull request**.
+2. **From the GitHub website:** Open your fork's repository page, click **Contribute**, then choose **Open pull request**.
 
 3. Verify PR targets:
    - **Base repository:** `UNB-ECE/unb-tutorials`, branch: `main`
