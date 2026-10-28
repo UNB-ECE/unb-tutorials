@@ -332,6 +332,10 @@ You can open a pull request either from the **GitHub dashboard in the UNB IDE** 
 1. **From the UNB IDE:** Open the GitHub dashboard for your project. Confirm the repository and branch shown near the top are the fork and branch you intend to submit, then click **Contribute** and choose **Open pull request**.
 2. **From the GitHub website:** Open your fork's repository page, click **Contribute**, then choose **Open pull request**.
 
+   ![UNB IDE GitHub dashboard showing the Contribute option and Open pull request action](docs/screenshots/04-contribute.png)
+
+   *Figure 4. Start the contribution flow from the UNB IDE GitHub dashboard.*
+
 3. Verify PR targets:
    - **Base repository:** `UNB-ECE/unb-tutorials`, branch: `main`
    - **Head repository:** `Joseph-Xu-Unb/unb-tutorials-fork`, branch: `author-eng1102-lessons`
