@@ -128,7 +128,7 @@ To connect the UNB IDE to your GitHub repository and commit changes from within 
 ### Required Token Scopes
 The token must carry two explicit scopes:
 1. **`repo`** (Full control of private repositories and public repositories): Required to read repo trees, create commits, and push branches.
-2. **`read:org`** (Read org and team membership): Essential for organizational repositories and fork contribution workflows (as established under Bug #514 / Bug #562).
+2. **`read:org`** (Read org and team membership): Needed for organizational repositories and fork contribution workflows.
 
 ### Token Creation Steps
 1. Navigate directly to the GitHub token creation page:
@@ -256,11 +256,10 @@ The Markdown `package` fence declares what the tutorial needs when it is preview
 ## 7. Commit and Save Changes via UNB IDE GitHub View
 
 1. Click the **GitHub** button in the bottom editor toolbar (`#githubArea`).
-2. If prompted to sign in (Bug #569 gate), confirm using your developer token.
+2. If prompted to sign in, use your developer token.
 3. The GitHub dashboard displays changed files under the diff list.
 4. Enter a descriptive commit message in the **Commit message** box (e.g., `feat(eng1102): add getting started lesson`).
 5. Click **Commit changes**.
-   - Notice: Per Bug #563 resolution, the editor keeps you in your active workspace rather than redirecting away.
 6. Click **Push changes** (or use the push icon in the header) to push the commit to your fork (`Joseph-Xu-Unb/unb-tutorials-fork`).
 
 ### Command Equivalent
