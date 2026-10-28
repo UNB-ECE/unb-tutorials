@@ -69,18 +69,35 @@ The `pxt.json` manifest must reside at the root of the course folder. It defines
 
 ---
 
-## 2. Fork and Branch on GitHub
+## 2. Fork or Sync the Tutorials Repository
 
-Authors develop tutorials in a personal fork of `UNB-ECE/unb-tutorials` and submit changes via pull request.
+Start from your own fork of [UNB-ECE/unb-tutorials](https://github.com/UNB-ECE/unb-tutorials). If you already forked the repository, sync your fork with the upstream repository before you start editing. If you do not have a fork yet, create one first. The screenshots below show the GitHub website; your buttons may look slightly different as GitHub updates its interface.
 
-### Worked Example: `Joseph-Xu-Unb/unb-tutorials-fork`
+### If you have not forked the repository yet
 
-1. Navigate to the canonical repository: [UNB-ECE/unb-tutorials](https://github.com/UNB-ECE/unb-tutorials).
-2. Click **Fork** in the top right.
-   - Owner: Select your GitHub account (e.g. `Joseph-Xu-Unb`).
-   - Repository name: `unb-tutorials-fork` (or keep `unb-tutorials`).
-   - Click **Create fork**.
-3. Create a topic branch for your course development (e.g., `author-eng1102-lessons`).
+1. Open the canonical repository and click **Fork**.
+
+   ![UNB-ECE/unb-tutorials repository page with the Fork button](screenshots/01-tutorials-repo-fork-button.jpg)
+
+   *Figure 1. Start a fork from the upstream repository.*
+
+2. Choose your GitHub account as the owner, enter a repository name (for example, `unb-tutorials-fork`), and click **Create fork**. Keeping **Copy the main branch only** selected is usually sufficient.
+
+   ![GitHub create-fork form showing owner, repository name, and Create fork button](screenshots/02-create-fork-form.jpg)
+
+   *Figure 2. Set the fork's owner and name before creating it.*
+
+### If you already have a fork
+
+1. Open your fork on GitHub and select its `main` branch.
+2. Click **Sync fork** and review GitHub's status and available update action.
+
+   ![An existing unb-tutorials fork with the Sync fork button](screenshots/03-existing-fork-sync-button.jpg)
+
+   *Figure 3. Find the Sync fork control on your fork's main branch.*
+
+3. If GitHub offers to update your branch, review the changes and proceed. If GitHub reports conflicts or offers to discard commits, do not discard your work blindly; resolve the conflict safely or ask a maintainer for help.
+4. After syncing, you can edit on `main` if you have permission and that suits your workflow. Otherwise, create a topic branch from the updated `main` (for example, `author-eng1102-lessons`) and use a pull request.
 
 ### Command Equivalent
 
@@ -91,10 +108,16 @@ gh repo fork UNB-ECE/unb-tutorials --fork-name unb-tutorials-fork --clone
 # Navigate into your fork
 cd unb-tutorials-fork
 
-# Create and checkout your topic branch
+# If this is an existing clone, update main from your fork before editing
+git checkout main
+git pull origin main
+
+# Optional: use a topic branch for pull-request work
 git checkout -b author-eng1102-lessons
 git push -u origin author-eng1102-lessons
 ```
+
+For a direct commit, make sure you are authorized to push to the selected branch and that branch protection permits it.
 
 ---
 
@@ -105,7 +128,7 @@ To connect the UNB IDE to your GitHub repository and commit changes from within 
 ### Required Token Scopes
 The token must carry two explicit scopes:
 1. **`repo`** (Full control of private repositories and public repositories): Required to read repo trees, create commits, and push branches.
-2. **`read:org`** (Read org and team membership): Essential for organizational repositories and fork contribution workflows (as established under Bug #514 / Bug #562).
+2. **`read:org`** (Read org and team membership): Needed for organizational repositories and fork contribution workflows.
 
 ### Token Creation Steps
 1. Navigate directly to the GitHub token creation page:
@@ -137,7 +160,7 @@ The token must carry two explicit scopes:
 
 ## 5. Author the Lesson Markdown
 
-Tutorial lessons are written in standard MakeCode tutorial Markdown.
+Tutorial lessons are written in standard MakeCode tutorial Markdown. See [MakeCode's user tutorial guide](https://makecode.com/writing-docs/user-tutorials) for the complete format and publishing options.
 
 ### Markdown Structure
 Create your lesson file in `lessons/<lesson-name>.md` (e.g. `lessons/getting-started.md`):
@@ -194,6 +217,27 @@ Add your new lesson file path to the `files` array in `pxt.json`:
 ]
 ```
 
+### Include the UNBdev board extension in a tutorial
+
+When a lesson uses custom UNBdev board blocks, add a `package` fence at the end of that lesson's Markdown. Use the approved, pinned extension revision so the tutorial preview and the learner's project load the same blocks:
+
+````markdown
+```package
+unbdev-board=github:UNB-ECE/pxt-unbdev-board#9c599beeb48972ae5d9f8108f9af66b320add00b
+```
+````
+
+Keep the package name (`unbdev-board`) and repository spelling as shown. Replace the commit only when maintainers approve a different revision; do not use a floating branch such as `main`. If the course extension itself needs the board package while it is open in the editor, also declare the same pinned dependency in that course's `pxt.json` `dependencies` object:
+
+```json
+"dependencies": {
+    "core": "*",
+    "unbdev-board": "github:UNB-ECE/pxt-unbdev-board#9c599beeb48972ae5d9f8108f9af66b320add00b"
+}
+```
+
+The Markdown `package` fence declares what the tutorial needs when it is previewed or opened. The `pxt.json` entry declares what the course extension needs when the course project is imported. Add both when the lesson and the course project both use the board extension.
+
 ---
 
 ## 6. Preview and Test the Tutorial
@@ -204,18 +248,18 @@ Add your new lesson file path to the `files` array in `pxt.json`:
    - Verify that instructions render clearly.
    - Click the lightbulb hint icon on each step to verify hint blocks display properly.
    - Check that block code compiles and runs in the simulator without errors.
-4. If you need isolated syntax debugging, return to the Home page and open **Tutorial Tool**, paste your Markdown, and verify the step-by-step preview.
+4. For isolated authoring and debugging, open the [UNB IDE Tutorial Tool](https://d200xhrnashxy5.cloudfront.net/tutorialtool.html), paste your Markdown, and check the step-by-step preview. Package fences are loaded by the tool, so confirm that UNBdev board blocks appear in the toolbox and that each step's blocks compile and run in the simulator.
+5. You can also use the MakeCode workflow described in [User tutorials: Testing](https://makecode.com/writing-docs/user-tutorials#testing): open the Markdown file in the Explorer with the flask/lab icon to preview it as a tutorial. When previewing a GitHub-hosted draft, use a fresh private/incognito window if an older cached copy appears. MakeCode may cloud-cache GitHub-hosted tutorial content; its guide documents release-based cache refresh for that workflow.
 
 ---
 
 ## 7. Commit and Save Changes via UNB IDE GitHub View
 
 1. Click the **GitHub** button in the bottom editor toolbar (`#githubArea`).
-2. If prompted to sign in (Bug #569 gate), confirm using your developer token.
+2. If prompted to sign in, use your developer token.
 3. The GitHub dashboard displays changed files under the diff list.
 4. Enter a descriptive commit message in the **Commit message** box (e.g., `feat(eng1102): add getting started lesson`).
 5. Click **Commit changes**.
-   - Notice: Per Bug #563 resolution, the editor keeps you in your active workspace rather than redirecting away.
 6. Click **Push changes** (or use the push icon in the header) to push the commit to your fork (`Joseph-Xu-Unb/unb-tutorials-fork`).
 
 ### Command Equivalent
@@ -275,10 +319,13 @@ node scripts/validate.mjs
 
 ## 9. Propose Publication via Pull Request
 
-1. In the UNB IDE GitHub dashboard, click the **Contribute** button (Feature #558 fork contribution flow).
-2. Alternatively, open GitHub in your browser:
-   - Navigate to `https://github.com/Joseph-Xu-Unb/unb-tutorials-fork`.
-   - Click **Contribute** -> **Open pull request**.
+You can open a pull request either from the **GitHub dashboard in the UNB IDE** or from the **GitHub website**. Both routes use GitHub's **Contribute** flow to propose changes from your fork to `UNB-ECE/unb-tutorials`.
+
+1. **From the UNB IDE:** Open the GitHub dashboard for your project. Confirm the repository and branch shown near the top are the fork and branch you intend to submit, then click **Contribute** and choose **Open pull request**.
+   ![UNB IDE Github dashboad showing the Contribute option and Open pull request action](screenshots/04-contribute.png)
+    *Figure 4. Start the contribution flow from the UNB IDE GitHub dashboard.*
+2. **From the GitHub website:** Open your fork's repository page, click **Contribute**, then choose **Open pull request**.
+
 3. Verify PR targets:
    - **Base repository:** `UNB-ECE/unb-tutorials`, branch: `main`
    - **Head repository:** `Joseph-Xu-Unb/unb-tutorials-fork`, branch: `author-eng1102-lessons`
@@ -320,8 +367,7 @@ After the pull request is reviewed and merged into `UNB-ECE/unb-tutorials:main`,
 1. In the UNB IDE GitHub dashboard, click **Sync Fork**; or, on GitHub.com, open your fork and choose **Sync fork → Update branch**.
 2. Confirm that your fork's `main` matches `UNB-ECE/unb-tutorials:main` and that the merge commit for your pull request is present.
 
-> [!IMPORTANT]
-> Your fork's `main` must always mirror upstream. **Do not merge your topic branch into your fork's `main`.** Changes reach `main` only by syncing from `UNB-ECE/unb-tutorials`.
+After the pull request is merged, sync your fork with upstream so it has the latest lessons and catalog content.
 
 ### 11.2 Delete the completed topic branch
 
@@ -334,19 +380,12 @@ git pull
 git branch -d author-eng1102-lessons
 ```
 
-### 11.3 Start the next lesson from the synced `main`
+### 11.3 Start the next lesson
 
-Create a new topic branch for each lesson or course change. Never continue on a merged branch, and never work directly on `main`.
+Continue on `main` when your repository permissions and contribution workflow allow it. For changes that need review, create a topic branch from the latest `main` and open a pull request. You can use the same approach in a fork or in the shared repository.
 
 ```bash
 git checkout main
 git pull
 git checkout -b author-eng1102-lesson-2
 ```
-
-### Why this matters
-
-A **Contribute** pull request compares your fork's branch against upstream `main`. If you commit directly to your fork's `main`, every later pull request carries all accumulated commits and files — including generated scaffolding — so reviewers see a noisy, unreviewable diff. That is exactly what happened with the earlier fork pull requests. Syncing `main` and using a fresh topic branch for each lesson keeps every pull request limited to the intended change.
-
-> [!WARNING]
-> If you have already committed to your fork's `main`, do not try to fix it by merging the topic branch into `main`. Sync `main` with upstream first, then move your work onto a new topic branch created from the synced `main`.
