@@ -69,18 +69,35 @@ The `pxt.json` manifest must reside at the root of the course folder. It defines
 
 ---
 
-## 2. Choose Where to Edit and Prepare a Branch
+## 2. Fork or Sync the Tutorials Repository
 
-You can author on `main` or a topic branch, depending on repository permissions and whether you need a pull request. A topic branch is useful when a change needs review; direct commits are fine when the repository permits them.
+Start from your own fork of [UNB-ECE/unb-tutorials](https://github.com/UNB-ECE/unb-tutorials). If you already forked the repository, sync your fork with the upstream repository before you start editing. If you do not have a fork yet, create one first. The screenshots below show the GitHub website; your buttons may look slightly different as GitHub updates its interface.
 
-### Worked Example: `Joseph-Xu-Unb/unb-tutorials-fork`
+### If you have not forked the repository yet
 
-1. Navigate to the canonical repository: [UNB-ECE/unb-tutorials](https://github.com/UNB-ECE/unb-tutorials).
-2. If you have write access, select `main` or a topic branch and begin editing. If you do not have write access, click **Fork** in the top right and choose a branch in your fork.
-   - Owner: Select your GitHub account (e.g. `Joseph-Xu-Unb`).
-   - Repository name: `unb-tutorials-fork` (or keep `unb-tutorials`).
-   - Click **Create fork**.
-3. For pull-request work, create a topic branch from the latest `main` (e.g., `author-eng1102-lessons`).
+1. Open the canonical repository and click **Fork**.
+
+   ![UNB-ECE/unb-tutorials repository page with the Fork button](screenshots/01-tutorials-repo-fork-button.jpg)
+
+   *Figure 1. Start a fork from the upstream repository.*
+
+2. Choose your GitHub account as the owner, enter a repository name (for example, `unb-tutorials-fork`), and click **Create fork**. Keeping **Copy the main branch only** selected is usually sufficient.
+
+   ![GitHub create-fork form showing owner, repository name, and Create fork button](screenshots/02-create-fork-form.jpg)
+
+   *Figure 2. Set the fork's owner and name before creating it.*
+
+### If you already have a fork
+
+1. Open your fork on GitHub and select its `main` branch.
+2. Click **Sync fork** and review GitHub's status and available update action.
+
+   ![An existing unb-tutorials fork with the Sync fork button](screenshots/03-existing-fork-sync-button.jpg)
+
+   *Figure 3. Find the Sync fork control on your fork's main branch.*
+
+3. If GitHub offers to update your branch, review the changes and proceed. If GitHub reports conflicts or offers to discard commits, do not discard your work blindly; resolve the conflict safely or ask a maintainer for help.
+4. After syncing, you can edit on `main` if you have permission and that suits your workflow. Otherwise, create a topic branch from the updated `main` (for example, `author-eng1102-lessons`) and use a pull request.
 
 ### Command Equivalent
 
@@ -91,7 +108,11 @@ gh repo fork UNB-ECE/unb-tutorials --fork-name unb-tutorials-fork --clone
 # Navigate into your fork
 cd unb-tutorials-fork
 
-# For pull-request work, create and push a topic branch
+# If this is an existing clone, update main from your fork before editing
+git checkout main
+git pull origin main
+
+# Optional: use a topic branch for pull-request work
 git checkout -b author-eng1102-lessons
 git push -u origin author-eng1102-lessons
 ```
