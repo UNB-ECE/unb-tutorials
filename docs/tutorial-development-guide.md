@@ -69,18 +69,18 @@ The `pxt.json` manifest must reside at the root of the course folder. It defines
 
 ---
 
-## 2. Fork and Branch on GitHub
+## 2. Choose Where to Edit and Prepare a Branch
 
-Authors develop tutorials in a personal fork of `UNB-ECE/unb-tutorials` and submit changes via pull request.
+You can start drafting on the shared repository's `main` branch if you have write access. Before committing, follow the repository's contribution policy: create a topic branch and open a pull request when review is required, or commit directly only when maintainers allow it. If you contribute through a personal fork, keep its `main` synchronized with upstream and move all lesson work to a fresh topic branch before committing. Do not commit lesson changes to your fork's `main`; this keeps each pull request focused and prevents unrelated changes from accumulating.
 
 ### Worked Example: `Joseph-Xu-Unb/unb-tutorials-fork`
 
 1. Navigate to the canonical repository: [UNB-ECE/unb-tutorials](https://github.com/UNB-ECE/unb-tutorials).
-2. Click **Fork** in the top right.
+2. If you have write access, you may select `main` and begin drafting. Before committing, create a topic branch if the change needs review; commit directly to the shared `main` only if repository policy permits it. If you do not have write access, click **Fork** in the top right.
    - Owner: Select your GitHub account (e.g. `Joseph-Xu-Unb`).
    - Repository name: `unb-tutorials-fork` (or keep `unb-tutorials`).
    - Click **Create fork**.
-3. Create a topic branch for your course development (e.g., `author-eng1102-lessons`).
+3. For pull-request work, create a topic branch from the latest `main` (e.g., `author-eng1102-lessons`).
 
 ### Command Equivalent
 
@@ -91,10 +91,12 @@ gh repo fork UNB-ECE/unb-tutorials --fork-name unb-tutorials-fork --clone
 # Navigate into your fork
 cd unb-tutorials-fork
 
-# Create and checkout your topic branch
+# For pull-request work, create and push a topic branch
 git checkout -b author-eng1102-lessons
 git push -u origin author-eng1102-lessons
 ```
+
+For a direct commit, make sure you are authorized to commit to the shared `main` branch and that branch protection permits it. Do not commit to a personal fork's `main`.
 
 ---
 
@@ -137,7 +139,7 @@ The token must carry two explicit scopes:
 
 ## 5. Author the Lesson Markdown
 
-Tutorial lessons are written in standard MakeCode tutorial Markdown.
+Tutorial lessons are written in standard MakeCode tutorial Markdown. See [MakeCode's user tutorial guide](https://makecode.com/writing-docs/user-tutorials) for the complete format and publishing options.
 
 ### Markdown Structure
 Create your lesson file in `lessons/<lesson-name>.md` (e.g. `lessons/getting-started.md`):
@@ -194,6 +196,27 @@ Add your new lesson file path to the `files` array in `pxt.json`:
 ]
 ```
 
+### Include the UNBdev board extension in a tutorial
+
+When a lesson uses custom UNBdev board blocks, add a `package` fence at the end of that lesson's Markdown. Use the approved, pinned extension revision so the tutorial preview and the learner's project load the same blocks:
+
+````markdown
+```package
+unbdev-board=github:UNB-ECE/pxt-unbdev-board#9c599beeb48972ae5d9f8108f9af66b320add00b
+```
+````
+
+Keep the package name (`unbdev-board`) and repository spelling as shown. Replace the commit only when maintainers approve a different revision; do not use a floating branch such as `main`. If the course extension itself needs the board package while it is open in the editor, also declare the same pinned dependency in that course's `pxt.json` `dependencies` object:
+
+```json
+"dependencies": {
+    "core": "*",
+    "unbdev-board": "github:UNB-ECE/pxt-unbdev-board#9c599beeb48972ae5d9f8108f9af66b320add00b"
+}
+```
+
+The Markdown `package` fence declares what the tutorial needs when it is previewed or opened. The `pxt.json` entry declares what the course extension needs when the course project is imported. Add both when the lesson and the course project both use the board extension.
+
 ---
 
 ## 6. Preview and Test the Tutorial
@@ -204,7 +227,8 @@ Add your new lesson file path to the `files` array in `pxt.json`:
    - Verify that instructions render clearly.
    - Click the lightbulb hint icon on each step to verify hint blocks display properly.
    - Check that block code compiles and runs in the simulator without errors.
-4. If you need isolated syntax debugging, return to the Home page and open **Tutorial Tool**, paste your Markdown, and verify the step-by-step preview.
+4. For isolated authoring and debugging, open the [UNB IDE Tutorial Tool](https://d200xhrnashxy5.cloudfront.net/tutorialtool.html), paste your Markdown, and check the step-by-step preview. Package fences are loaded by the tool, so confirm that UNBdev board blocks appear in the toolbox and that each step's blocks compile and run in the simulator.
+5. You can also use the MakeCode workflow described in [User tutorials: Testing](https://makecode.com/writing-docs/user-tutorials#testing): open the Markdown file in the Explorer with the flask/lab icon to preview it as a tutorial. When previewing a GitHub-hosted draft, use a fresh private/incognito window if an older cached copy appears. MakeCode may cloud-cache GitHub-hosted tutorial content; its guide documents release-based cache refresh for that workflow.
 
 ---
 
@@ -336,7 +360,7 @@ git branch -d author-eng1102-lessons
 
 ### 11.3 Start the next lesson from the synced `main`
 
-Create a new topic branch for each lesson or course change. Never continue on a merged branch, and never work directly on `main`.
+For pull-request work from a fork, create a new topic branch for each lesson or course change. Never continue on a merged branch or commit lesson changes to your fork's `main`. Direct commits to the shared repository's `main` are only for contributors authorized to do so under its policy.
 
 ```bash
 git checkout main
