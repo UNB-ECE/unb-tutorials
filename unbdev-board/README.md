@@ -4,7 +4,7 @@ Reusable instructor-preview activities for the integrated UNBdev.board.
 
 - Publication reviewer: the UNB-ECE repository maintainer. Physical/student-readiness review remains required under [#140](https://github.com/UNB-ECE/unb-platform/issues/140).
 - [BLiXel lesson](lessons/blixel.md) and [card image](static/blixel.svg) were copied without content changes from UNB-ECE/pxt-microbit revision `94b7bfe64ae6348f477f42d0a52ab97e8ea77a3b`, paths `docs/projects/unbdev-board/blixel.md` and `docs/static/tutorials/unbdev-blixel.svg`.
-- The lesson retains extension revision `9c599beeb48972ae5d9f8108f9af66b320add00b`. Relocated catalog URLs use the reserved `/unb-tutorials` namespace defined by `config.json`; hosting/editor integration is tracked in [#185](https://github.com/UNB-ECE/unb-platform/issues/185) and [#186](https://github.com/UNB-ECE/unb-platform/issues/186).
+- The lesson retains extension revision `9c599beeb48972ae5d9f8108f9af66b320add00b`. Relocated catalog URLs use the editor's reserved `/unb-tutorials` namespace; hosting/editor integration is tracked in [#185](https://github.com/UNB-ECE/unb-platform/issues/185) and [#186](https://github.com/UNB-ECE/unb-platform/issues/186).
 
 ## Hardware warning
 

@@ -10,7 +10,7 @@
 //   <collection>/static/<asset>      card and lesson images
 //
 // Card and image URLs are written as the absolute paths the editor requests, so
-// they begin with the prefix declared in config.json. A URL that does not
+// they begin with the editor's reserved /unb-tutorials prefix. A URL that does not
 // resolve to a file inside the same collection is a failure, which is what stops
 // a card from pointing at a lesson that was never added.
 //
@@ -45,69 +45,45 @@ const HEADING = /^#\s+\S/m;
 // A "# Title" is not a substitute: the level matters.
 const CATEGORY_HEADING = /^##\s+\S/m;
 const COLLECTION_ID = /^[a-z0-9][a-z0-9-]*$/;
+const CONTENT_PATH_PREFIX = "/unb-tutorials";
 
 /**
- * Validate every collection declared in <root>/config.json.
+ * Validate every top-level collection folder containing a catalog.md.
  * Returns a list of human-readable problems; empty means the content is valid.
  */
 export function validateRepo(root) {
     const problems = [];
-    const configPath = join(root, "config.json");
+    const collections = readdirSync(root, { withFileTypes: true })
+        .filter((entry) => entry.isDirectory() && existsSync(join(root, entry.name, "catalog.md")))
+        .map((entry) => entry.name)
+        .sort();
 
-    if (!existsSync(configPath)) {
-        return ["config.json is missing"];
+    if (collections.length === 0) {
+        return ["No top-level collections found (expected folders containing catalog.md)"];
     }
 
-    let config;
-    try {
-        config = JSON.parse(readFileSync(configPath, "utf8"));
-    } catch (e) {
-        return [`config.json is not valid JSON: ${e.message}`];
-    }
-
-    const prefix = config.contentPathPrefix;
-    if (typeof prefix !== "string" || !/^\/[A-Za-z0-9._~\-/]*[A-Za-z0-9._~\-]$/.test(prefix)) {
-        problems.push('config.json: "contentPathPrefix" must be an absolute path such as "/unb-tutorials"');
-    }
-
-    const collections = config.collections;
-    if (!Array.isArray(collections) || collections.length === 0) {
-        problems.push('config.json: "collections" must be a non-empty array');
-    } else {
-        collections.forEach((collection, i) => {
-            const where = `config.json: collections[${i}]`;
-            if (!collection || typeof collection !== "object" || Array.isArray(collection)) {
-                problems.push(`${where}: must be an object`);
-                return;
-            }
-            if (typeof collection.id !== "string" || !COLLECTION_ID.test(collection.id)) {
-                problems.push(`${where}: "id" must be a lowercase slug such as "unbdev-board"`);
-            }
-            if (typeof collection.title !== "string" || !collection.title.trim()) {
-                problems.push(`${where}: "title" is required`);
-            }
-        });
-    }
-
-    if (problems.length) return problems;
-
-    for (const collection of collections) {
-        const collectionDir = join(root, collection.id);
-        if (!existsSync(collectionDir) || !statSync(collectionDir).isDirectory()) {
-            problems.push(`${collection.id}/: collection folder is missing`);
+    for (const collectionId of collections) {
+        if (!COLLECTION_ID.test(collectionId)) {
+            problems.push(`${collectionId}/: collection folder name must be a lowercase slug`);
             continue;
         }
-        const base = `${prefix}/${collection.id}`;
+
+        const collectionDir = join(root, collectionId);
+        if (!existsSync(collectionDir) || !statSync(collectionDir).isDirectory()) {
+            problems.push(`${collectionId}/: collection folder is missing`);
+            continue;
+        }
+        const base = `${CONTENT_PATH_PREFIX}/${collectionId}`;
         validateCatalog(
             join(collectionDir, "catalog.md"),
-            `${collection.id}/catalog.md`,
+            `${collectionId}/catalog.md`,
             collectionDir,
             base,
             problems
         );
         validateLessons(
             join(collectionDir, "lessons"),
-            `${collection.id}/lessons`,
+            `${collectionId}/lessons`,
             problems
         );
     }
@@ -230,6 +206,7 @@ if (invokedDirectly) {
         process.exit(1);
     }
 
-    const { collections } = JSON.parse(readFileSync(join(root, "config.json"), "utf8"));
+    const collections = readdirSync(root, { withFileTypes: true })
+        .filter((entry) => entry.isDirectory() && existsSync(join(root, entry.name, "catalog.md")));
     console.log(`Content OK: ${collections.length} collection(s) in ${root}`);
 }

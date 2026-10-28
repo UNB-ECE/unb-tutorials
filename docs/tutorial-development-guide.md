@@ -71,12 +71,12 @@ The `pxt.json` manifest must reside at the root of the course folder. It defines
 
 ## 2. Choose Where to Edit and Prepare a Branch
 
-You can start drafting on the shared repository's `main` branch if you have write access. Before committing, follow the repository's contribution policy: create a topic branch and open a pull request when review is required, or commit directly only when maintainers allow it. If you contribute through a personal fork, keep its `main` synchronized with upstream and move all lesson work to a fresh topic branch before committing. Do not commit lesson changes to your fork's `main`; this keeps each pull request focused and prevents unrelated changes from accumulating.
+You can author on `main` or a topic branch, depending on repository permissions and whether you need a pull request. A topic branch is useful when a change needs review; direct commits are fine when the repository permits them.
 
 ### Worked Example: `Joseph-Xu-Unb/unb-tutorials-fork`
 
 1. Navigate to the canonical repository: [UNB-ECE/unb-tutorials](https://github.com/UNB-ECE/unb-tutorials).
-2. If you have write access, you may select `main` and begin drafting. Before committing, create a topic branch if the change needs review; commit directly to the shared `main` only if repository policy permits it. If you do not have write access, click **Fork** in the top right.
+2. If you have write access, select `main` or a topic branch and begin editing. If you do not have write access, click **Fork** in the top right and choose a branch in your fork.
    - Owner: Select your GitHub account (e.g. `Joseph-Xu-Unb`).
    - Repository name: `unb-tutorials-fork` (or keep `unb-tutorials`).
    - Click **Create fork**.
@@ -96,7 +96,7 @@ git checkout -b author-eng1102-lessons
 git push -u origin author-eng1102-lessons
 ```
 
-For a direct commit, make sure you are authorized to commit to the shared `main` branch and that branch protection permits it. Do not commit to a personal fork's `main`.
+For a direct commit, make sure you are authorized to push to the selected branch and that branch protection permits it.
 
 ---
 
@@ -344,8 +344,7 @@ After the pull request is reviewed and merged into `UNB-ECE/unb-tutorials:main`,
 1. In the UNB IDE GitHub dashboard, click **Sync Fork**; or, on GitHub.com, open your fork and choose **Sync fork → Update branch**.
 2. Confirm that your fork's `main` matches `UNB-ECE/unb-tutorials:main` and that the merge commit for your pull request is present.
 
-> [!IMPORTANT]
-> Your fork's `main` must always mirror upstream. **Do not merge your topic branch into your fork's `main`.** Changes reach `main` only by syncing from `UNB-ECE/unb-tutorials`.
+After the pull request is merged, sync your fork with upstream so it has the latest lessons and catalog content.
 
 ### 11.2 Delete the completed topic branch
 
@@ -358,19 +357,12 @@ git pull
 git branch -d author-eng1102-lessons
 ```
 
-### 11.3 Start the next lesson from the synced `main`
+### 11.3 Start the next lesson
 
-For pull-request work from a fork, create a new topic branch for each lesson or course change. Never continue on a merged branch or commit lesson changes to your fork's `main`. Direct commits to the shared repository's `main` are only for contributors authorized to do so under its policy.
+Continue on `main` when your repository permissions and contribution workflow allow it. For changes that need review, create a topic branch from the latest `main` and open a pull request. You can use the same approach in a fork or in the shared repository.
 
 ```bash
 git checkout main
 git pull
 git checkout -b author-eng1102-lesson-2
 ```
-
-### Why this matters
-
-A **Contribute** pull request compares your fork's branch against upstream `main`. If you commit directly to your fork's `main`, every later pull request carries all accumulated commits and files — including generated scaffolding — so reviewers see a noisy, unreviewable diff. That is exactly what happened with the earlier fork pull requests. Syncing `main` and using a fresh topic branch for each lesson keeps every pull request limited to the intended change.
-
-> [!WARNING]
-> If you have already committed to your fork's `main`, do not try to fix it by merging the topic branch into `main`. Sync `main` with upstream first, then move your work onto a new topic branch created from the synced `main`.
