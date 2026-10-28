@@ -10,8 +10,11 @@
         "catalog.md",
         "main.ts",
         "microphone-validation.md",
+        "motor-validation.md",
         "lessons/blixel.md",
         "lessons/microphone.md",
+        "lessons/motor-control.md",
+        "static/motors.svg",
         "lessons/main.py"
     ],
     "testFiles": [

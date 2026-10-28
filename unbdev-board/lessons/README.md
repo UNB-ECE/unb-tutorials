@@ -6,15 +6,22 @@ Tutorial Tool, and synchronize back to your own fork or branch.
 
 ## Contents
 
+The [motor control preview](motor-control.md) introduces the left/right channels,
+signed speeds, timed commands, braking, and driver disable. It is **Hardware
+unverified** and does not authorize physical motor operation; see the
+[motor readiness checklist](../motor-validation.md).
+
 - [BLiXel light patterns](blixel.md) — the five integrated lights: colour, brightness,
   shift, rotate and bar graphs. Card label **Hardware test pending**.
 - [Explore the microphone](microphone.md) — sound level, threshold and event flags.
   Card label **Hardware unverified**.
+- [Control UNBdev.board motors](motor-control.md) — the motor API preview. Card label
+  **Hardware unverified**; this is not authorization for physical motor operation.
 - `main.ts` — the empty starter program. It compiles and does nothing until you add
   blocks or a snippet from a lesson.
 - `pxt.json` — the project manifest: the device dependency and the file list.
 
-Both lessons are instructor previews. Their behaviour on real hardware is not
+These lessons are instructor previews. Their behaviour on real hardware is not
 validated, and compiling or navigating a lesson proves nothing about the board. See
 [the collection README](../README.md) and
 [the microphone coverage notes](../microphone-validation.md). Do not remove a card's

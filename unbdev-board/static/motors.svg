@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 360" role="img" aria-labelledby="title desc">
+  <title id="title">UNBdev.board motor control preview</title>
+  <desc id="desc">A micro:bit style controller connected conceptually to left and right motor channels, marked instructor preview.</desc>
+  <rect width="640" height="360" rx="28" fill="#f4f2f7"/>
+  <rect x="34" y="38" width="572" height="284" rx="24" fill="#fff" stroke="#d9d3e2" stroke-width="4"/>
+  <rect x="75" y="105" width="190" height="150" rx="22" fill="#25232a"/>
+  <g fill="#ff4d71">
+    <circle cx="115" cy="145" r="9"/><circle cx="157" cy="145" r="9"/><circle cx="199" cy="145" r="9"/>
+    <circle cx="115" cy="180" r="9"/><circle cx="157" cy="180" r="9"/><circle cx="199" cy="180" r="9"/>
+    <circle cx="115" cy="215" r="9"/><circle cx="157" cy="215" r="9"/><circle cx="199" cy="215" r="9"/>
+  </g>
+  <path d="M278 180h48m0 0-16-16m16 16-16 16" fill="none" stroke="#6941a5" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/>
+  <g font-family="Arial, sans-serif" text-anchor="middle">
+    <rect x="352" y="103" width="205" height="62" rx="16" fill="#e7def3"/>
+    <text x="454" y="143" font-size="24" font-weight="700" fill="#42276c">LEFT MOTOR</text>
+    <rect x="352" y="191" width="205" height="62" rx="16" fill="#e7def3"/>
+    <text x="454" y="231" font-size="24" font-weight="700" fill="#42276c">RIGHT MOTOR</text>
+    <text x="320" y="291" font-size="18" font-weight="700" fill="#8a4b00">INSTRUCTOR PREVIEW · HARDWARE UNVERIFIED</text>
+  </g>
+</svg>

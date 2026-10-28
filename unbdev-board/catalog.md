@@ -23,6 +23,15 @@ Instructor previews of activities using the integrated board. Physical validatio
     "imageUrl": "/unb-tutorials/unbdev-board/static/microphone.svg",
     "label": "Hardware unverified",
     "labelClass": "orange ribbon"
+  },
+  {
+    "name": "Control the motors (instructor preview)",
+    "description": "Explore left/right motor channels, signed speed, timed commands, braking and driver disable. No physical motor testing is authorized by this preview.",
+    "url": "/unb-tutorials/unbdev-board/lessons/motor-control",
+    "cardType": "tutorial",
+    "imageUrl": "/unb-tutorials/unbdev-board/static/motors.svg",
+    "label": "Hardware unverified",
+    "labelClass": "orange ribbon"
   }
 ]
 ```
