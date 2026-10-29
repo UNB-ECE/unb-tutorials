@@ -3,3 +3,6 @@
 Thumbs.db
 *.swp
 node_modules/
+
+# Local clone of this repository used for fork-based authoring
+unb-tutorials-fork/
