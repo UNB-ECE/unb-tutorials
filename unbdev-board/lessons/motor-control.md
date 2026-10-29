@@ -85,5 +85,5 @@ If an instructor later authorizes physical testing, use a separate reviewed proc
 Click **Done** to keep your project.
 
 ```package
-unbdev-board=github:UNB-ECE/pxt-unbdev-board#9c599beeb48972ae5d9f8108f9af66b320add00b
+unbdev-board=github:UNB-ECE/pxt-unbdev-board#3ce812de50a6b83c4333038a1467164b4b3d0daa
 ```
