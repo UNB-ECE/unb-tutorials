@@ -6,7 +6,7 @@ Reusable instructor-preview activities for the integrated UNBdev.board.
 
 [Send messages with Wi-Fi and MQTT](lessons/wifi-mqtt.md) covers all nine public
 Wi-Fi/MQTT blocks and both text/number receive modes at the collection's pinned
-extension revision `22ed7d76838be66d456de13efc1604b1037dbefe` (v0.3.0).
+extension revision `5da3feb6213f2c015d8945b044cb318a4eaf2c2b` (v0.3.1).
 It requires an instructor-approved lab network and anonymous unencrypted MQTT
 broker on TCP 1883. Real credentials must never be committed or shared.
 The [coverage and validation record](wifi-mqtt-validation.md) includes setup,
@@ -18,7 +18,7 @@ the card remains **Hardware unverified**.
 - Publication reviewer: the UNB-ECE repository maintainer. Physical/student-readiness review remains required under [#140](https://github.com/UNB-ECE/unb-platform/issues/140).
 - [BLiXel lesson](lessons/blixel.md) and [card image](static/blixel.svg) were copied without content changes from UNB-ECE/pxt-microbit revision `94b7bfe64ae6348f477f42d0a52ab97e8ea77a3b`, paths `docs/projects/unbdev-board/blixel.md` and `docs/static/tutorials/unbdev-blixel.svg`.
 - [Motor control preview](lessons/motor-control.md) introduces the implemented motor API for code review. Physical motor operation is not validated or authorized by the lesson; see the [motor validation checklist](motor-validation.md).
-- The lesson retains extension revision `22ed7d76838be66d456de13efc1604b1037dbefe`. Relocated catalog URLs use the editor's reserved `/unb-tutorials` namespace; hosting/editor integration is tracked in [#185](https://github.com/UNB-ECE/unb-platform/issues/185) and [#186](https://github.com/UNB-ECE/unb-platform/issues/186).
+- The lesson retains extension revision `5da3feb6213f2c015d8945b044cb318a4eaf2c2b`. Relocated catalog URLs use the editor's reserved `/unb-tutorials` namespace; hosting/editor integration is tracked in [#185](https://github.com/UNB-ECE/unb-platform/issues/185) and [#186](https://github.com/UNB-ECE/unb-platform/issues/186).
 
 ## Hardware warning
 
@@ -40,7 +40,7 @@ no lesson is bundled into pxt-microbit.
 ## Motor control instructor preview
 
 The [motor control lesson](lessons/motor-control.md) uses extension revision
-`22ed7d76838be66d456de13efc1604b1037dbefe`. It is a software/API preview only.
+`5da3feb6213f2c015d8945b044cb318a4eaf2c2b`. It is a software/API preview only.
 Do not connect, power, or operate motors until the board, firmware, motor supply,
 wiring, driver limits, stop behavior, and fault response have been reviewed and
 physically validated. The [motor validation checklist](motor-validation.md) lists

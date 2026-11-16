@@ -150,5 +150,5 @@ music.playTone(Note.C, music.beat(BeatFraction.Quarter))
 🎉 Well done! You built a device with an **input** (button A), **outputs** (BLiXels and the screen), a **sequence** with **timing**, and a **loop**. It always returns to a known **normal state**, which is how real control systems stay safe.
 
 ```package
-unbdev-board=github:UNB-ECE/pxt-unbdev-board#22ed7d76838be66d456de13efc1604b1037dbefe
+unbdev-board=github:UNB-ECE/pxt-unbdev-board#5da3feb6213f2c015d8945b044cb318a4eaf2c2b
 ```

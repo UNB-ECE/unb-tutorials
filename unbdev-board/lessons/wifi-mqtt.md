@@ -195,5 +195,5 @@ Finish with the disconnect procedure, then remove real credentials before sharin
 The simulator does not reproduce the integrated ESP32, network or broker. Compiler success checks API usage only. This preview claims no deployed-editor completion or physical validation. The instructor coverage matrix and evidence form are in `wifi-mqtt-validation.md` in the UNBDev Board Guide collection. Click **Done** to retain your project privately.
 
 ```package
-unbdev-board=github:UNB-ECE/pxt-unbdev-board#22ed7d76838be66d456de13efc1604b1037dbefe
+unbdev-board=github:UNB-ECE/pxt-unbdev-board#5da3feb6213f2c015d8945b044cb318a4eaf2c2b
 ```
