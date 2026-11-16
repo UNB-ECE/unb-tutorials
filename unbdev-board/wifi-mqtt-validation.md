@@ -6,8 +6,8 @@ Status: **instructor preview; local compilation and blocks-XML decompilation che
 
 ## Declared source baseline
 
-- Extension: `UNB-ECE/pxt-unbdev-board` commit `22ed7d76838be66d456de13efc1604b1037dbefe` (v0.3.0), matching this collection's manifest and lesson package fence.
-- Inspected implementation: [`wifi.ts`](https://github.com/UNB-ECE/pxt-unbdev-board/blob/22ed7d76838be66d456de13efc1604b1037dbefe/wifi.ts) and [`docs/wifi-mqtt.md`](https://github.com/UNB-ECE/pxt-unbdev-board/blob/22ed7d76838be66d456de13efc1604b1037dbefe/docs/wifi-mqtt.md).
+- Extension: `UNB-ECE/pxt-unbdev-board` commit `5da3feb6213f2c015d8945b044cb318a4eaf2c2b` (v0.3.1), matching this collection's manifest and lesson package fence.
+- Inspected implementation: [`wifi.ts`](https://github.com/UNB-ECE/pxt-unbdev-board/blob/5da3feb6213f2c015d8945b044cb318a4eaf2c2b/wifi.ts) and [`docs/wifi-mqtt.md`](https://github.com/UNB-ECE/pxt-unbdev-board/blob/5da3feb6213f2c015d8945b044cb318a4eaf2c2b/docs/wifi-mqtt.md).
 - Target family: micro:bit V2 only. The collection declares target version 9.1.1; this is not proof of the currently deployed build.
 - Intended editor: `https://d200xhrnashxy5.cloudfront.net`. Record its actual release/build and target/framework revisions when tested; currently **not measured**.
 - Controller firmware, board revision and ESP32 AT firmware: **not supplied or tested for this lesson**. An extension document's controller firmware reference does not establish ESP32 compatibility.
@@ -122,7 +122,7 @@ wildcards, QoS 1/2, TLS or automatic reconnect are tested or promised.
 Date/time and operator:
 Content repository commit and saved program revision:
 Editor release URL/build, target revision, framework revision:
-Extension commit: 22ed7d76838be66d456de13efc1604b1037dbefe
+Extension commit: 5da3feb6213f2c015d8945b044cb318a4eaf2c2b
 Board revision / micro:bit revision:
 Controller firmware revision:
 ESP32 AT firmware identity (W1):

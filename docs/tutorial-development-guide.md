@@ -56,7 +56,7 @@ The `pxt.json` manifest must reside at the root of the course folder. It defines
         "core": "*",
         "radio": "*",
         "microphone": "*",
-        "unbdev-board": "github:UNB-ECE/pxt-unbdev-board#22ed7d76838be66d456de13efc1604b1037dbefe"
+        "unbdev-board": "github:UNB-ECE/pxt-unbdev-board#5da3feb6213f2c015d8945b044cb318a4eaf2c2b"
     },
     "files": [
         "README.md",
@@ -238,7 +238,7 @@ When a lesson uses custom UNBdev board blocks, add a `package` fence at the end 
 
 ````markdown
 ```package
-unbdev-board=github:UNB-ECE/pxt-unbdev-board#22ed7d76838be66d456de13efc1604b1037dbefe
+unbdev-board=github:UNB-ECE/pxt-unbdev-board#5da3feb6213f2c015d8945b044cb318a4eaf2c2b
 ```
 ````
 
@@ -247,7 +247,7 @@ Keep the package name (`unbdev-board`) and repository spelling as shown. Replace
 ```json
 "dependencies": {
     "core": "*",
-    "unbdev-board": "github:UNB-ECE/pxt-unbdev-board#22ed7d76838be66d456de13efc1604b1037dbefe"
+    "unbdev-board": "github:UNB-ECE/pxt-unbdev-board#5da3feb6213f2c015d8945b044cb318a4eaf2c2b"
 }
 ```
 
