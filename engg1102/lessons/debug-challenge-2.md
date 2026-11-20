@@ -25,6 +25,14 @@ You are not expected to solve this without support. Ask your instructor or TA if
 
 The small button **between** A and B is **Reset**. Pressing it restarts the program, so don't use it while testing.
 
+## Blocks you'll see in this code @showdialog
+
+- ``||input:running time (ms)||`` is a stopwatch that starts when the board turns on. It counts in **milliseconds**: 1000 ms is 1 second. It never stops or resets while the program runs.
+- **aPressedAt** saves the running time at the moment A is pressed, like writing down the time on a clock.
+- **running time − aPressedAt** is how long ago A was pressed. If A was pressed at 5000 ms and it's now 6500 ms, A was pressed **1500 ms** (1.5 seconds) ago.
+- **aWasPressed** remembers whether A has been pressed (**true**) or not (**false**).
+- ``||logic:and||`` is only **true** when **both** sides are true.
+
 ## Step 1: Run it and observe
 
 **Don't change any code yet.** First, find out what the program actually does.
@@ -55,6 +63,8 @@ Now read the code. Use what you observed to work out **which block** causes the 
 
 - Imagine B is pressed 1 second after A, then imagine it's 4 seconds. What does the time calculation give each time?
 - For each one, is the check true or false? Is that what you want?
+
+*Hint: you don't need any new blocks. You may have to **change** one that's already there.*
 
 ## Step 4: Fix it and test again
 

@@ -26,6 +26,14 @@ You are not expected to solve this without support. Ask your instructor or TA if
 
 The small button **between** A and B is **Reset**. Pressing it restarts the program, so don't use it while testing.
 
+## Blocks you'll see in this code @showdialog
+
+- ``||basic:forever||`` runs the blocks inside it over and over, as long as the board is on.
+- ``||input:button B is pressed||`` checks whether B is being held down **right now**: **true** while it's down, **false** once it's let go.
+- ``||input:running time (ms)||`` is a stopwatch that starts when the board turns on. It counts in **milliseconds**: 1000 ms is 1 second. **start** saves the time when B went down, so **running time − start** is how long B has been held.
+- ``||loops:while||`` keeps repeating the blocks inside it for as long as its check is **true**. Here it waits until B is let go, or until 1 second has passed.
+- ``||logic:if then else||`` runs the **if** part when its check is true, and the **else** part when it's false.
+
 ## Step 1: Run it and observe
 
 **Don't change any code yet.** First, find out what the program actually does.
@@ -56,6 +64,8 @@ Now read the code. Use what you observed to work out **which part** causes the d
 
 - Follow a quick tap through the code, one block at a time. Which blocks run?
 - What is the last thing that happens to the LED on that path? How is that different from a long hold?
+
+*Hint: nothing needs changing. You may have to **add** a block.*
 
 ## Step 4: Fix it and test again
 
