@@ -222,5 +222,5 @@ With the lights off, change ``||UNBDev:set UNBdev.board BLiXel brightness to||``
 Keep the completed project at 20% brightness. Explain why shift can lose a colour but rotate wraps it, why 50/100 lights three of five pixels, and how RGB, HSL, and named colours feed the same setting block. Compilation and the micro:bit simulator check the program flow; only your recorded board test verifies the BLiXels. Click **Done** to keep your project.
 
 ```package
-unbdev-board=github:UNB-ECE/pxt-unbdev-board#22ed7d76838be66d456de13efc1604b1037dbefe
+unbdev-board=github:UNB-ECE/pxt-unbdev-board#5da3feb6213f2c015d8945b044cb318a4eaf2c2b
 ```
