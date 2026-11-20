@@ -21,7 +21,7 @@ Your device will:
 
 - Blocks are grouped by colour into **drawers** in the toolbox, such as **Input**, **Basic**, and **Loops**. Click a drawer to open it.
 - The BLiXel blocks are in ``||UNBDev:UNBdev.board||`` → **BLiXel**.
-- ⚠️ **The A and B labels on the board are swapped.** The button your code calls **A** is the one printed **B** on the board.
+- ⚠️ <span style="color:#d32f2f">**The A and B labels on the board are swapped.** The button your code calls **A** is the one printed **B** on the board.</span>
 - Stuck? Ask your instructor or TA.
 - Click **Next** when you finish a step.
 
@@ -104,14 +104,14 @@ Your traffic light is finished! Time to test it.
 
 1. Plug in the board's **power adapter**, connect the USB cable, switch the board **on**, and click **Download**.
 2. Check the **normal state**: BLiXel 5 is green and the screen shows an **X**.
-3. Press **button A** (the button labelled **B** on the board). You should see:
+3. Press **button A** (<span style="color:#d32f2f">the button labelled **B** on the board</span>). You should see:
    - **Yellow** for 2 seconds.
    - **Red** with the **stick figure** for 5 seconds.
    - The **X** flashing 3 times.
    - Back to **green** with an **X**.
 
 **Not working?**
-- **Button does nothing?** Press the **other** button: the A and B labels on the board are swapped.
+- **Button does nothing?** Press the **other** button: <span style="color:#d32f2f">the A and B labels on the board are swapped.</span>
 - **No colour lights?** The simulator doesn't show BLiXels, so test on the real board.
 - **Two lights on at once?** Make sure there's a ``||UNBDev:set all UNBdev.board BLiXels to black||`` before each new colour.
 - **Doesn't go back to green?** The last three blocks must be **below** the repeat loop, not inside it.

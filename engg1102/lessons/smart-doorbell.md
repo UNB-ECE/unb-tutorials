@@ -21,7 +21,7 @@ When a visitor presses the bell, your device will:
 
 - Blocks are grouped by colour into **drawers** in the toolbox, such as **Input**, **Music**, and **Loops**. Click a drawer to open it.
 - The BLiXel blocks are in ``||UNBDev:UNBdev.board||`` → **BLiXel**.
-- ⚠️ **The A and B labels on the board are swapped.** The button your code calls **A** is the one printed **B** on the board.
+- ⚠️ <span style="color:#d32f2f">**The A and B labels on the board are swapped.** The button your code calls **A** is the one printed **B** on the board.</span>
 - Stuck? Ask your instructor or TA.
 - Click **Next** when you finish a step.
 
@@ -90,7 +90,7 @@ Your doorbell is finished! Time to test it.
 
 1. Plug in the board's **power adapter**, connect the USB cable, switch the board **on**, and click **Download**.
 2. Check the **normal state**: BLiXels off, a small diamond on the screen.
-3. Press **button A** (the button labelled **B** on the board). You should see and hear:
+3. Press **button A** (<span style="color:#d32f2f">the button labelled **B** on the board</span>). You should see and hear:
    - The **house** icon and **blue** lights straight away.
    - A **ding-dong** from the speaker.
    - The blue lights **flashing** 3 times.
@@ -98,7 +98,7 @@ Your doorbell is finished! Time to test it.
 
 **Not working?**
 - **No colour lights?** The simulator doesn't show BLiXels, so test on the real board.
-- **Button does nothing?** Press the **other** button: the A and B labels on the board are swapped.
+- **Button does nothing?** Press the **other** button: <span style="color:#d32f2f">the A and B labels on the board are swapped.</span>
 - **No sound?** The sound comes from the small speaker marked **Microbit Speaker**, next to the USB port. Check that it isn't covered.
 - **Lights stay on?** The last two blocks must be **below** the repeat loop, not inside it.
 

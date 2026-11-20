@@ -22,7 +22,7 @@ You are not expected to solve this without support. Ask your instructor or TA if
 - **Holding** Button B for **more than one second** should make the LED **stay on** for as long as it is held, then turn **off** the moment it is released.
 - A quick tap should **never** leave the LED on.
 
-⚠️ On the UNB Development Board, the **A** and **B** labels are swapped. The button your code calls **B** is the one printed **A** on the board.
+⚠️ <span style="color:#d32f2f">On the UNB Development Board, the **A** and **B** labels are swapped. The button your code calls **B** is the one printed **A** on the board.</span>
 
 The small button **between** A and B is **Reset**. Pressing it restarts the program, so don't use it while testing.
 
@@ -40,7 +40,7 @@ The small button **between** A and B is **Reset**. Pressing it restarts the prog
 
 The simulator doesn't show BLiXels, so test this on the **board**: plug the **power adapter** into the barrel jack, connect the **micro USB** cable, and switch the board **on**. The red power light and yellow USB light should come on. Then click **Download**. If it only saves a file, click **...** next to it, choose **Connect device**, and download again. Once the program is on the board, try:
 
-Remember the swapped labels: **A** below means the button printed **B**, and **B** means the button printed **A**.
+<span style="color:#d32f2f">Remember the swapped labels: **A** below means the button printed **B**, and **B** means the button printed **A**.</span>
 
 - **Tap** B quickly. Watch the LED for a few seconds afterwards.
 - **Hold** B for about 3 seconds, then let go.
