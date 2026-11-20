@@ -40,7 +40,7 @@ Build the circuit from the **diagram provided with this activity**. The board's 
 ## How to use this tutorial @showdialog
 
 - Blocks are grouped by colour into **drawers** in the toolbox. **Pins** and **Control** are under **Advanced**: click **Advanced** at the bottom of the toolbox to see them.
-- ⚠️ **The A and B labels on the board are swapped.** The button your code calls **A** is the one printed **B** on the board.
+- ⚠️ <span style="color:#d32f2f">**The A and B labels on the board are swapped.** The button your code calls **A** is the one printed **B** on the board.</span>
 - Stuck? Click the **lightbulb** 💡 to see what your code should look like.
 - Click **Next** when you finish a step.
 
@@ -623,7 +623,7 @@ Your smart bus is finished! Time to test it.
 2. At the start: door **open**, LED **off**, screen shows **0**.
 3. Move a LEGO person through the doorway, past the sensor, **one at a time**. The count should go up by **one** each time.
 4. After the **5th** person: the door **closes** and the LED turns **on**.
-5. **Tap** button A (the button labelled **B** on the board): the count drops to **4**, the door **opens**, and the LED turns **off**.
+5. **Tap** button A (<span style="color:#d32f2f">the button labelled **B** on the board</span>): the count drops to **4**, the door **opens**, and the LED turns **off**.
 6. Bring the count back up, then **hold** button A for more than a second and let go: the count goes back to **0**.
 
 **Not working?**
@@ -631,7 +631,7 @@ Your smart bus is finished! Time to test it.
 - **Only counts one person?** The doorway must read **10 cm or more** when it's empty. Make sure the person moves well away from the sensor, and that the sensor faces open space.
 - **Never counts?** Check the Trig and Echo wires and pins. Try moving the person closer, or change **6** to a bigger number.
 - **Counts with nobody there?** Something else may be within 6 cm of the sensor. Point it across the doorway at open space.
-- **Button does nothing?** Press the **other** button: the A and B labels on the board are swapped.
+- **Button does nothing?** Press the **other** button: <span style="color:#d32f2f">the A and B labels on the board are swapped.</span>
 - **A tap gets missed?** The program checks the button once each time around the loop, so press it for a little longer.
 - **LED stays on?** Check that **digital write pin P0 to 0** is inside the **passengers < 5** if from Step 12.
 - **LED never lights?** Check it's the right way round (**long leg** toward P0), and that the pin dropdown says **P0**. Check its resistor and its GND wire.

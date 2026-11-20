@@ -22,15 +22,25 @@ You are not expected to solve this without support. Ask your instructor or TA if
 - After **four** presses, the LED should **stay off**, no matter how many more times Button A is pressed...
 - ...until **Button B** is pressed to **reset** the count back to zero.
 
-⚠️ On the UNB Development Board, the **A** and **B** labels are swapped. The button your code calls **A** is the one printed **B** on the board.
+⚠️ <span style="color:#d32f2f">On the UNB Development Board, the **A** and **B** labels are swapped. The button your code calls **A** is the one printed **B** on the board.</span>
 
 The small button **between** A and B is **Reset**. Pressing it restarts the program, so don't use it while testing.
+
+## Blocks you'll see in this code @showdialog
+
+- **Variables** are labelled boxes that remember a value. **presses** counts how many times A has been pressed. **ledOn** remembers whether the LED is on (**true**) or off (**false**).
+- ``||variables:change presses by 1||`` adds 1 to **presses**.
+- ``||logic:not||`` flips **true** to **false**, and **false** to **true**. **set ledOn to not ledOn** switches the LED's remembered state each press.
+- **≤** means "less than or equal to". **3 ≤ 4** is true, and so is **4 ≤ 4**.
+- An ``||logic:if||`` block only runs the blocks inside it when its check is **true**.
 
 ## Step 1: Run it and observe
 
 **Don't change any code yet.** First, find out what the program actually does.
 
 The simulator doesn't show BLiXels, so test this on the **board**: plug the **power adapter** into the barrel jack, connect the **micro USB** cable, and switch the board **on**. The red power light and yellow USB light should come on. Then click **Download**. If it only saves a file, click **...** next to it, choose **Connect device**, and download again. Once the program is on the board, try:
+
+<span style="color:#d32f2f">Remember the swapped labels: **A** below means the button printed **B**, and **B** means the button printed **A**.</span>
 
 - Press **A** once at a time, and count the presses. Write down whether the LED is **on** or **off** after each one.
 - Keep pressing **A** well past four presses. What does the LED do?
@@ -54,6 +64,8 @@ Now read the code. Use what you observed to work out **which block** causes the 
 
 - Think about **presses**. What is its value just before each press of A?
 - At which press should the program stop responding? Does the code agree?
+
+*Hint: you don't need any new blocks. You may have to **change** one that's already there.*
 
 ## Step 4: Fix it and test again
 
