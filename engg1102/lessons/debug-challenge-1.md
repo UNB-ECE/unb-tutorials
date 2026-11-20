@@ -32,6 +32,8 @@ The small button **between** A and B is **Reset**. Pressing it restarts the prog
 
 The simulator doesn't show BLiXels, so test this on the **board**: plug the **power adapter** into the barrel jack, connect the **micro USB** cable, and switch the board **on**. The red power light and yellow USB light should come on. Then click **Download**. If it only saves a file, click **...** next to it, choose **Connect device**, and download again. Once the program is on the board, try:
 
+Remember the swapped labels: **A** below means the button printed **B**, and **B** means the button printed **A**.
+
 - Press **A** once at a time, and count the presses. Write down whether the LED is **on** or **off** after each one.
 - Keep pressing **A** well past four presses. What does the LED do?
 - Press **B**, then press **A** a few more times.
